@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <meta http-equiv="Content-Security-Policy"/>
+    <title></title>
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+
+  </head>
+  <body ng-app="starter" ng-controller="Printing">
+
+    <ion-pane>
+      <ion-header-bar class="bar-stable">
+        <h1 class="title">Potrdilo majster by Kunst</h1>
+      </ion-header-bar>
+      <ion-content>
+      <div ng-hide="print">
+      <div class = "row">
+         <div class = "col"><button ng-click="doPrint(5)" class="button button-positive full-parent">5</button></div>
+         <div class = "col"><button ng-click="doPrint(10)" class="button button-positive full-parent">10</button></div>
+         <div class = "col"><button ng-click="doPrint(20)" class="button button-positive full-parent">20</button></div>
+       </div>
+      <div class = "row">
+         <div class = "col"><button ng-click="doPrint(30)" class="button button-positive full-parent">30</button></div>
+         <div class = "col"><button ng-click="doPrint(40)" class="button button-positive full-parent">40</button></div>
+         <div class = "col"><button ng-click="doPrint(50)" class="button button-positive full-parent">50</button></div>
+      </div>
+          <label class="item item-input">
+            <span class="input-label">Cena:</span>
+            <input type="number" ng-click="toZero()" ng-model='price' class="input-price">
+          </label><br>
+          <button ng-click="doPrint(price)" class="button button-positive print">
+            Natisni
+          </button>
+      </div>
+      <div ng-hide="pair">
+        <button ng-click="scan()" class="button button-positive scan">Scan</button>
+        <ion-list>
+          <ion-item ng-repeat="item in items">
+            <button class="enable-pointer-events full-parent" ng-click="select(item.id)">{{item.name}}: {{item.id}}</button>
+          </ion-item>
+        </ion-list>
+      </div>
+      </ion-content>
+    </ion-pane>
+    <script>
+    </script>
+  </body>
+</html>
