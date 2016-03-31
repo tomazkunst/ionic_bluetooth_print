@@ -1,3 +1,3 @@
 # ionic_bluetooth_print
-requrements:
+requirements:
 cordova-plugin-bluetooth-serial
